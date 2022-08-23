@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/sidebar.css">
+    <link rel="stylesheet" href="CSS/people.css">
+    <link rel="stylesheet" href="CSS/message.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <section class="sidebar">
+        <header class="sidebar__header">
+            <img class="sidebar__icon" src="./IMG/no_photo_icon.jpg" alt="icon">
+            <input class="sidebar__input" type="search"><button class="sidebar__btn">find</button>
+        </header>
+ 
+        <article class="sidebar__contacts">
+            <h1 class="sidebar__text">Chats</h1>
+            
+
+            <section class="people" id="John">
+                <img src="./IMG/man.png" alt="John" id="John" class="people__icon">
+                <div class="people__info">
+                    <h2 class="people__name">John</h2>
+                    <span class="people__massage">hi! How are you?</span>
+                </div>
+            </section>
+
+            <section class="people" id="Alise">
+                <img src="./IMG/women.png" alt="" class="people__icon">
+                <div class="people__info">
+                    <h2 class="people__name">Alice</h2>
+                    <span class="people__massage">Heeeeeey!</span>
+            </div>
+            </section>
+
+            <section class="people" id="Kate">
+                <img src="./IMG/Kate.jpg" alt="" class="people__icon">
+                <div class="people__info">
+                    <h2 class="people__name">Kate</h2>
+                    <span class="people__massage">Good moarning!</span>
+                </div>
+            </section>
+            <section class="people"  id="Bill">
+                <img src="./IMG/Bill.jpg" alt="" class="people__icon">
+                <div class="people__info">
+                    <h2 class="people__name">Bill</h2>
+                    <span class="people__massage">    Go to Real Madrid match tomorrow
+                    </span>
+                </div>
+            </section>
+     
+        </article>
+    </section>
+
+
+    <section class="chat">
+
+        <header class="chat__header">
+            <img src="./IMG/women.png" alt="woman" class="chat__icon">
+            <h2 class="chat__name">Alice</h2>
+        </header>
+
+        <section class="chat__main">
+
+            <div class="message">
+                <img src="./IMG/women.png" alt="woman" class="message__icon" id="message__icon1">
+                <div class="messsage__text">
+                    <p  id="StartMessage1">how you feel?</p>
+                </div>
+            </div>
+            
+            <div class="mymessage">
+                <div class="mymesssage__text">
+                    <p id="myMessage">Well, how about you?</p>
+                </div>
+            </div>
+            
+            <div class="message">
+                <img src="./IMG/women.png" alt="woman" class="message__icon" id="message__icon2">
+                <div class="messsage__text">
+                    <p  id="StartMessage2" >I need u help</p>
+                </div>
+            </div>
+
+            <div class="mymessage" id="my__mes">
+                <div class="mymesssage__text" id="mymessage2">
+                    
+                </div>
+            </div>
+
+            <div class="message" id="chMsg">
+               
+            </div>
+
+
+        </section>
+        <section class="input">
+        
+                <input type="text" class="input__text">
+                <button class="input__button">Send</button>
+        
+        </section>
+    </section>
+</div>
+<script src="./JS/scrypt.js"></script>
+</body>
+</html>

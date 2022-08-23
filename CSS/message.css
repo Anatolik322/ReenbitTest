@@ -1,0 +1,32 @@
+.messsage__text{
+    height:fit-content;
+    width:fit-content;
+    background-color: purple;
+    border-radius: 15px;
+    max-width: 600px;
+    padding:0 10px 0 10px;
+    margin-right: 10px;
+}
+.message__icon{
+    height: 50px;
+    width: 50px;
+    padding: 10px 10px 10px 30px;
+}
+
+.message{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+.mymesssage__text{
+    background-color: lightgray;
+    height: 50px;
+    border-radius:15px;
+    width:fit-content;
+    float: right;
+    margin-right: 20px;
+    text-align: center;
+    padding: auto;
+}

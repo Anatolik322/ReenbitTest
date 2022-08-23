@@ -1,0 +1,46 @@
+.people{
+    height: 100px;
+    width: 400px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid gray;
+
+}
+
+.people__icon{
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+}
+.people__name{
+    margin: 0;
+    padding: 0;
+   
+}
+
+.people__message{
+    margin: 0;
+    padding: 0;
+}
+.people__info{
+    height: 50px;
+}
+.people:hover{
+    cursor: pointer;
+    background-color: lightgray;
+    transition: 0.4s;
+}
+#John{
+    order: 0;
+}
+#Kate{
+    order: 0;
+}
+#Alise{
+    order: 0;
+} 
+#Bill{
+    order: 0;
+}
