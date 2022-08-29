@@ -43,117 +43,101 @@ function newChat(human){
     document.querySelector('#myMessage').textContent=human.myansver;
     document.querySelector('.chat__name').textContent=human.name;   
 }
+
+let inputTxt=document.querySelector(".input__text");
 let inputBtn=document.querySelector(".input__button");
-inputBtn.onclick=function(){
-    mymsg= document.createElement('div'); mymsg.setAttribute('class','mymessage'); mymsg.setAttribute('id','mymessage2');
-    let inputTxt=document.querySelector(".input__text");
-    let newMsg= document.createElement('p');
-    newMsg.textContent=inputTxt.value;
-    newMsg.setAttribute('class','myMessage');
-    document.querySelector('#my__mes').appendChild(mymsg);
-    document.querySelector('#mymessage2').appendChild(newMsg);
-    setTimeout(getMsg, 5000, people[1].img);
-}
+
+
+    inputBtn.onclick=function(){
+        getMyMessage();
+        setTimeout(getMsg, 1000, people[1].img);
+    }
+
 let johnBtn= document.querySelector("#John");
 johnBtn.onclick = function(){
      newChat(people[0]);
    
 
     inputBtn.onclick=function(){
-        mymsg= document.createElement('div'); mymsg.setAttribute('class','mymessage'); mymsg.setAttribute('id','mymessage2');
-        let inputTxt=document.querySelector(".input__text");
-        let newMsg= document.createElement('p');
-        newMsg.textContent=inputTxt.value;
-        newMsg.setAttribute('class','myMessage');
-        document.querySelector('#my__mes').appendChild(mymsg);
-        document.querySelector('#mymessage2').appendChild(newMsg);
-        setTimeout(getMsg, 5000, people[0].img);
+        getMyMessage();
+        setTimeout(getMsg, 1000, people[0].img);
     }
 }
 let aliseBtn= document.querySelector("#Alise");
 aliseBtn.onclick = function(){ newChat(people[1]); ;
      
-    inputBtn.onclick=function(){
-        mymsg= document.createElement('div'); mymsg.setAttribute('class','mymessage'); mymsg.setAttribute('id','mymessage2');
-        let inputTxt=document.querySelector(".input__text");
-        let newMsg= document.createElement('p');
-        newMsg.textContent=inputTxt.value;
-        newMsg.setAttribute('class','myMessage');
-        document.querySelector('#my__mes').appendChild(mymsg);
-        document.querySelector('#mymessage2').appendChild(newMsg);
-        setTimeout(getMsg, 5000, people[1].img);
+    
+        inputBtn.onclick=function(){
+            getMyMessage();
+            setTimeout(getMsg, 1000, people[1].img);
+        }
     }
-    } 
+     
 let kateBtn= document.querySelector("#Kate");
 kateBtn.onclick = function(){ newChat(people[2]);
      
-    inputBtn.onclick=function(){
-        let inputTxt=document.querySelector(".input__text");
-        let newMsg= document.createElement('p');
-        newMsg.textContent=inputTxt.value;
-        newMsg.setAttribute('class','myMessage');
-        document.querySelector('#mymessage2').appendChild(newMsg);
-        setTimeout(getMsg, 5000, people[2].img);
-    }}
+ 
+        inputBtn.onclick=function(){
+            getMyMessage();
+            setTimeout(getMsg, 1000, people[2].img);
+        }
+    }
 let billBtn= document.querySelector("#Bill");
 billBtn.onclick = function(){ newChat(people[3]);
     inputBtn.onclick=function(){
-        let inputTxt=document.querySelector(".input__text");
-        let newMsg= document.createElement('p');
-        newMsg.textContent=inputTxt.value;
-        newMsg.setAttribute('class','myMessage');
-        document.querySelector('#mymessage2').appendChild(newMsg);
-        setTimeout(getMsg, 5000, people[3].img);}}
-   
+        getMyMessage();
+        setTimeout(getMsg, 1000, people[3].img);
+    }
+}
   
 let searchBtn=document.querySelector('.sidebar__btn');
-
-
-
 searchBtn.onclick=function(){
-   
 let subStr=document.querySelector('.sidebar__input').value;
-
-
 let i=0;
 do {
-  
     document.querySelector(people[i].id).style.order="0";
     if(people[i].name.toLowerCase().includes(subStr.toLowerCase())){
     document.querySelector(people[i].id).style.order ='-1';
     }
-    i++;
-    
+    i++;  
 }while(i<people.length)
 }
 
-fetch('https://api.chucknorris.io/jokes/random').then((res)=>res.json()).then((data)=>setInfo(data));
-let chuckMsg= document.createElement('p');
-function setInfo(value){
-   
-    chuckMsg.textContent=value.value;
-}
+
+
 
 //from chack
+
 function getMsg(pict){
-    let img=document.createElement('img');img.setAttribute('src', pict);img.setAttribute('class','message__icon');img.setAttribute('id','chIcon');
-   let divInner=document.createElement('div');divInner.setAttribute('class', 'messsage__text');divInner.setAttribute('id','chMsgg');
-    document.querySelector('#chMsg').appendChild(img);
-    document.querySelector('#chMsg').appendChild(divInner);
+    fetch('https://api.chucknorris.io/jokes/random').then((res)=>res.json()).then((data)=>setInfo(data));
+    let chuckMsg= document.createElement('p');
+
+    function setInfo(value){
+    chuckMsg.textContent=value.value;
+    }
+    let div = document.createElement('div'); div.setAttribute('class','message'); 
+    let img = document.createElement('img');img.setAttribute('src', pict);img.setAttribute('class','message__icon');img.setAttribute('id','chIcon');
+    let divInner=document.createElement('div');divInner.setAttribute('class', 'messsage__text');divInner.setAttribute('id','chMsgg');
+    div.appendChild(img);
+    div.appendChild(divInner);
     divInner.appendChild(chuckMsg);
     let date=new Date();
     let time=document.createElement('span');time.textContent=date.getHours()+':'+date.getMinutes();
-    document.querySelector('#chMsg').appendChild(time);
+    document.querySelector('.chat__main').appendChild(div);
   }
 
+  
+  function getMyMessage(){
+    let div=document.createElement('div'); div.setAttribute('class', 'mymessage');
+    let divInner=document.createElement('div'); div.setAttribute('class', 'mymesssage__text');
+    let newMsg= document.createElement('p');
+    let chat=document.querySelector('.chat__main');
+    newMsg.textContent=inputTxt.value;
+    newMsg.setAttribute('class','myMessage');
+    chat.appendChild(div);
+    div.appendChild(divInner);
+    divInner.appendChild(newMsg);
+    
+  }
 
-function removee(){
-    if(document.querySelector('#chMsgg')!=null||document.querySelector('#chIcon')!=null||document.querySelector('#mymessage2')!=null){
-     document.querySelector('#chMsgg').remove();
-     document.querySelector('#chIcon').remove();
-     document.querySelector('#mymessage2').remove();
-    }else return 0;
-}
-
-
-
+  
